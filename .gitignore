@@ -27,6 +27,7 @@ Thumbs.db
 /output/
 /tmp/
 /sales/
+/docs/
 /database/database.sqlite
 /storage/app/codex-checks/
 /storage/app/private/*
