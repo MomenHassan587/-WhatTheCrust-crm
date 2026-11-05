@@ -1,0 +1,430 @@
+# composer.json
+
+[فهرس كل الأكواد](../../16-all-project-source.md)
+
+المشروع: `autocare-booking` · الملف: `composer.json` · 87 سطر.
+
+**وظيفة الملف:** إعدادات تطوير/build/dependencies أو اختبار. تفسّرها الأداة المكتوبة في الملف؛ وجود package لا يثبت استخدامها في واجهة نشطة.
+
+**نوعه:** source / مصدر. ده وصف للدور، مش ادعاء إن كل ملف مستورد في الصفحة الحالية.
+
+**مصدر حرفي:** [افتح الملف الأصلي](../../../../autocare-booking/composer.json). الكود الكامل تحت نسخة من محتواه، وشرح السطور منفصل عنه. المقتطفات لا تتنفّذ بتصفح المذكرة.
+
+## الكود الحقيقي كاملًا — Full original source
+
+<details><summary>افتح الكود كاملًا؛ الشرح خطوة خطوة تحته</summary>
+
+```json
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": ["laravel", "framework"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.2.2",
+        "laravel/pint": "^1.24",
+        "laravel/sail": "^1.41",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.5.50"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install",
+            "npm run build"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+            "@php artisan test"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+        ],
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+```
+
+</details>
+
+## نمشي سطر سطر — Line by line
+
+كل مجموعة تحت مقتطف متتابع من نفس الملف، مش function جديدة مستقلة. لو script وtemplate في ملف Vue واحد، هتلاقي الجزئين بنفس ترتيبهم الأصلي، والربط بينهما موضّح في الدرس العملي.
+
+### السطور 1–8
+
+```json
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": ["laravel", "framework"],
+    "license": "MIT",
+    "require": {
+```
+
+**السطر 1:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 2:** `$schema` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"https://getcomposer.org/schema.json",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 3:** `name` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"laravel/laravel",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 4:** `type` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"project",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 5:** `description` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"The skeleton application for the Laravel framework.",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 6:** `keywords` اسم حقل/إعداد، والقيمة بعد النقطتين هي `["laravel", "framework"],`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 7:** `license` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"MIT",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 8:** `require` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+### السطور 9–16
+
+```json
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.2.2",
+        "laravel/pint": "^1.24",
+```
+
+**السطر 9:** `php` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^8.2",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 10:** `laravel/framework` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^12.0",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 11:** `laravel/tinker` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^2.10.1"`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 12:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 13:** `require-dev` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 14:** `fakerphp/faker` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^1.23",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 15:** `laravel/pail` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^1.2.2",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 16:** `laravel/pint` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^1.24",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+### السطور 17–24
+
+```json
+        "laravel/sail": "^1.41",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.5.50"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+```
+
+**السطر 17:** `laravel/sail` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^1.41",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 18:** `mockery/mockery` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^1.6",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 19:** `nunomaduro/collision` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^8.6",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 20:** `phpunit/phpunit` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"^11.5.50"`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 21:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 22:** `autoload` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 23:** `psr-4` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 24:** `App\\` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"app/",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+### السطور 25–32
+
+```json
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+```
+
+**السطر 25:** `Database\\Factories\\` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"database/factories/",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 26:** `Database\\Seeders\\` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"database/seeders/"`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 27:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 28:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 29:** `autoload-dev` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 30:** `psr-4` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 31:** `Tests\\` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"tests/"`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 32:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+### السطور 33–40
+
+```json
+    },
+    "scripts": {
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install",
+```
+
+**السطر 33:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 34:** `scripts` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 35:** `setup` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 36:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 37:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 38:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 39:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 40:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+### السطور 41–48
+
+```json
+            "npm run build"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+```
+
+**السطر 41:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 42:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 43:** `dev` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 44:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 45:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 46:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 47:** `test` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 48:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+### السطور 49–56
+
+```json
+            "@php artisan test"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+```
+
+**السطر 49:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 50:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 51:** `post-autoload-dump` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 52:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 53:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 54:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 55:** `post-update-cmd` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 56:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+### السطور 57–64
+
+```json
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+```
+
+**السطر 57:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 58:** `post-root-package-install` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 59:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 60:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 61:** `post-create-project-cmd` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 62:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 63:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 64:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+### السطور 65–72
+
+```json
+        ],
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+```
+
+**السطر 65:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 66:** `pre-package-uninstall` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 67:** عنصر/تكملة داخل بيانات JSON؛ الفواصل تفصل العناصر، و[] قائمة و{} object.
+
+**السطر 68:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 69:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 70:** `extra` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 71:** `laravel` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 72:** `dont-discover` اسم حقل/إعداد، والقيمة بعد النقطتين هي `[]`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+### السطور 73–80
+
+```json
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+```
+
+**السطر 73:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 74:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 75:** `config` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 76:** `optimize-autoloader` اسم حقل/إعداد، والقيمة بعد النقطتين هي `true,`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 77:** `preferred-install` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"dist",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 78:** `sort-packages` اسم حقل/إعداد، والقيمة بعد النقطتين هي `true,`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 79:** `allow-plugins` اسم حقل/إعداد، والقيمة بعد النقطتين هي `{`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 80:** `pestphp/pest-plugin` اسم حقل/إعداد، والقيمة بعد النقطتين هي `true,`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+### السطور 81–87
+
+```json
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+
+```
+
+**السطر 81:** `php-http/discovery` اسم حقل/إعداد، والقيمة بعد النقطتين هي `true`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 82:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 83:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 84:** `minimum-stability` اسم حقل/إعداد، والقيمة بعد النقطتين هي `"stable",`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 85:** `prefer-stable` اسم حقل/إعداد، والقيمة بعد النقطتين هي `true`. JSON بيانات، مش function بتتنفّذ؛ لو القيمة script فتنفيذها محتاج الأمر المناسب صراحة.
+
+**السطر 86:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+## جرّب تفهمه بنفسك
+
+اختار function واحدة: حدد مين يناديها، الـarguments، كل return، وأول عنصر واجهة يقرأ نتيجتها. لو فيه حفظ/دفع/حذف، جرّب فقط في مشروع تدريب وبيئة آمنة؛ مجرد قراءة المصدر لا تحتاج تشغيله.
+
+**English words:** Source = المصدر، Function = دالة، Parameter = اسم مدخل في التعريف، Argument = قيمة مبعوتة، Return = ناتج راجع، State = حالة، Side effect = أثر جانبي، Caller = الكود اللي نادى الدالة.

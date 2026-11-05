@@ -1,0 +1,328 @@
+# إنشاء الطلبات لأول مرة
+
+[فهرس كل الأكواد](../../../../16-all-project-source.md)
+
+المشروع: `pizza-crm` · الملف: `database/migrations/2026_06_14_000005_create_orders_table.php` · 25 سطر.
+
+**وظيفة الملف:** user_id nullable للضيف مع nullOnDelete؛ branch_id cascadeOnDelete؛ status بدأت enum قديمة ثم تغيرت لاحقًا إلى string. الربط والسلوك مع الحذف مهم قبل أي حذف فرع حقيقي.
+
+**نوعه:** active. ده وصف للدور، مش ادعاء إن كل ملف مستورد في الصفحة الحالية.
+
+**مصدر حرفي:** [افتح الملف الأصلي](../../../../../database/migrations/2026_06_14_000005_create_orders_table.php). الكود الكامل تحت نسخة من محتواه، وشرح السطور منفصل عنه. المقتطفات لا تتنفّذ بتصفح المذكرة.
+
+## الملفات المرتبطة — Connected files
+
+- [pizza-crm/database/migrations/2026_09_28_000001_add_commerce_fields.php](2026_09_28_000001_add_commerce_fields.php.md)
+
+## الكود الحقيقي كاملًا — Full original source
+
+<details><summary>افتح الكود كاملًا؛ الشرح خطوة خطوة تحته</summary>
+
+```php
+<?php // database/migrations/2026_06_14_000005_create_orders_table.php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('branch_id')->constrained()->cascadeOnDelete();
+            $table->enum('order_type', ['delivery', 'pickup', 'dine_in']);
+            $table->decimal('total_price', 10, 2)->default(0);
+            $table->enum('status', ['pending', 'confirmed', 'preparing', 'ready', 'completed', 'cancelled'])->default('pending');
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('orders');
+    }
+};
+```
+
+</details>
+
+## الدوال والأجزاء المهمة هنا — Functions in context
+
+### up
+
+أنشئ orders الأساسية.
+
+- **بتاخد إيه؟ Inputs:** Blueprint.
+
+- **بترجع/بتغيّر إيه؟ Return / effect:** void.
+
+### down
+
+drop orders.
+
+- **بتاخد إيه؟ Inputs:** لا شيء.
+
+- **بترجع/بتغيّر إيه؟ Return / effect:** void.
+
+## وظيفة كل استدعاء في الملف — Methods & calls
+
+نفس اسم method ممكن يظهر على objects مختلفة؛ اسم المستقبِل مهم. الـarguments الفعلية مكتوبة في السطر، والبطاقة تشرح العقد العام أو تعريف المشروع.
+
+### Schema::create
+
+- **جاية منين؟** Laravel Schema Builder
+
+- **وظيفتها:** أنشئ جدولًا جديدًا ونفّذ تعريف الأعمدة والقيود المكتوب داخل callback عند تشغيل migration. مختلف عن Model::create الذي ينشئ صف بيانات.
+
+- **المدخلات — Arguments:** اسم الجدول string ثم Closure تستقبل Blueprint $table. مثال: 'branches' ثم function (Blueprint $table) { ... }.
+
+- **الناتج/الأثر — Return / effect:** void؛ الأثر إنشاء schema في DB، لا يرجع Model ولا صفًا محفوظًا.
+
+- **أول موضع هنا:** السطر 10.
+
+- **مثال:** Schema::create('branches', function (Blueprint $table) { $table->id(); });
+
+### $table->id
+
+- **جاية منين؟** Laravel Schema Blueprint
+
+- **وظيفتها:** أضف عمود primary key رقمي auto-increment إلى تعريف الجدول؛ لا تضيف صف مستخدم أو order.
+
+- **المدخلات — Arguments:** اسم عمود اختياري string افتراضي 'id'؛ في المشروع بدون arguments.
+
+- **الناتج/الأثر — Return / effect:** ColumnDefinition للعمود يمكن إضافة modifiers لها.
+
+- **أول موضع هنا:** السطر 11.
+
+- **مثال:** $table->id();
+
+### $table->foreignId
+
+- **جاية منين؟** Laravel Schema Blueprint
+
+- **وظيفتها:** أضف عمود معرف للربط؛ constrained بعدها تُنشئ قيد foreign key. foreignId وحدها مش ضمان وجود سجل أب.
+
+- **المدخلات — Arguments:** اسم العمود string، مثل branch_id أوuser_id.
+
+- **الناتج/الأثر — Return / effect:** ForeignIdColumnDefinition قابلة لـnullable/constrained.
+
+- **أول موضع هنا:** السطر 13.
+
+- **مثال:** $table->foreignId('branch_id')->constrained()->cascadeOnDelete();
+
+### ->nullable
+
+- **جاية منين؟** Laravel Schema Column
+
+- **وظيفتها:** تسمح بقيمة NULL للعمود.
+
+- **المدخلات — Arguments:** Boolean اختياري.
+
+- **الناتج/الأثر — Return / effect:** ColumnDefinition.
+
+- **أول موضع هنا:** السطر 12.
+
+### ->constrained
+
+- **جاية منين؟** Laravel Schema
+
+- **وظيفتها:** تضيف foreign key لجدول/عمود مستنتج أو محدد.
+
+- **المدخلات — Arguments:** table/column اختيارية.
+
+- **الناتج/الأثر — Return / effect:** ForeignKeyDefinition.
+
+- **أول موضع هنا:** السطر 13.
+
+### ->nullOnDelete
+
+- **جاية منين؟** Laravel Schema foreign key
+
+- **وظيفتها:** تضبط المرجع إلى null عند حذف الأب إذا كان العمود يسمح.
+
+- **المدخلات — Arguments:** بدون arguments.
+
+- **الناتج/الأثر — Return / effect:** تعريف القيد.
+
+- **أول موضع هنا:** السطر 12.
+
+### ->cascadeOnDelete
+
+- **جاية منين؟** Laravel Schema foreign key
+
+- **وظيفتها:** تجعل حذف الأب يحذف الصفوف المرتبطة بهذا القيد.
+
+- **المدخلات — Arguments:** بدون arguments.
+
+- **الناتج/الأثر — Return / effect:** نفس تعريف القيد؛ مؤثرة عند تنفيذ حذف لاحقًا.
+
+- **أول موضع هنا:** السطر 13.
+
+### $table->enum
+
+- **جاية منين؟** Laravel Schema Blueprint
+
+- **وظيفتها:** عرّف عمودًا مقيدًا بقائمة قيم داخل schema مثل order_type؛ تطبيق SQL المحدد يختلف حسب driver.
+
+- **المدخلات — Arguments:** اسم العمود string ثم array القيم المسموحة.
+
+- **الناتج/الأثر — Return / effect:** ColumnDefinition.
+
+- **أول موضع هنا:** السطر 16.
+
+- **مثال:** $table->enum('order_type', ['delivery', 'pickup', 'dine_in']);
+
+### $table->decimal
+
+- **جاية منين؟** Laravel Schema Blueprint
+
+- **وظيفتها:** عرّف عمود عدد عشري دقيق، مناسب لتخزين قيمة سعر بمنزلتين بدل نوع float التقريبي.
+
+- **المدخلات — Arguments:** اسم العمود ثم precision وهو إجمالي الأرقام، ثم scale وهو أرقام بعد العلامة. decimal('price',10,2) يسمح8أرقام قبل العلامة و2بعدها.
+
+- **الناتج/الأثر — Return / effect:** ColumnDefinition؛ لا يحسب total ولا يحوّل سعر المتصفح إلى قيمة موثوقة وحده.
+
+- **أول موضع هنا:** السطر 15.
+
+- **مثال:** $table->decimal('price', 10, 2);
+
+### ->default
+
+- **جاية منين؟** Laravel ColumnDefinition
+
+- **وظيفتها:** تحدد قيمة افتراضية للعمود.
+
+- **المدخلات — Arguments:** value.
+
+- **الناتج/الأثر — Return / effect:** نفس تعريف العمود.
+
+- **أول موضع هنا:** السطر 16.
+
+### $table->timestamps
+
+- **جاية منين؟** Laravel Schema Blueprint — الإصدار المثبت بالمشروع
+
+- **وظيفتها:** أضف عمودي created_at وupdated_at كأعمدة قابلة لـNULL؛ Eloquent لاحقًا يحدّث القيم عند create/save.
+
+- **المدخلات — Arguments:** precision اختيارية لأجزاء الثانية، أوبدون arguments كما في المشروع.
+
+- **الناتج/الأثر — Return / effect:** Collection من ColumnDefinition للعمودين في Laravel المثبت؛ لا يرجع وقت الآن ولا rows.
+
+- **أول موضع هنا:** السطر 17.
+
+- **مثال:** $table->timestamps();
+
+### Schema::dropIfExists
+
+- **جاية منين؟** Laravel Schema Builder
+
+- **وظيفتها:** احذف الجدول كاملًا لو موجود، بما فيه بياناته. يستعمل في down للrollback؛ لو غير موجود لا يحاول حذفه كجدول موجود.
+
+- **المدخلات — Arguments:** اسم الجدول string فقط. لا يستقبل callback ولا Blueprint.
+
+- **الناتج/الأثر — Return / effect:** void؛ الأثر حذف الجدول فعليًا عند تنفيذ migration/rollback، مش مجرد إخفائه أو حذف صف واحد.
+
+- **أول موضع هنا:** السطر 23.
+
+- **مثال:** Schema::dropIfExists('order_status_logs');
+
+## نمشي سطر سطر — Line by line
+
+كل مجموعة تحت مقتطف متتابع من نفس الملف، مش function جديدة مستقلة. لو script وtemplate في ملف Vue واحد، هتلاقي الجزئين بنفس ترتيبهم الأصلي، والربط بينهما موضّح في الدرس العملي.
+
+### السطور 1–8
+
+```php
+<?php // database/migrations/2026_06_14_000005_create_orders_table.php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+```
+
+**السطر 1:** بداية كود PHP؛ السيرفر يفسّره، مش المتصفح.
+
+**السطر 3:** use / استيراد الاسم `Illuminate\Database\Migrations\Migration` علشان نقدر نكتبه مختصر في الملف. لو use جوّه class فده إدخال Trait بيوفّر methods للكلاس؛ الاستيراد نفسه مش طلب شبكة ولا query.
+
+**السطر 4:** use / استيراد الاسم `Illuminate\Database\Schema\Blueprint` علشان نقدر نكتبه مختصر في الملف. لو use جوّه class فده إدخال Trait بيوفّر methods للكلاس؛ الاستيراد نفسه مش طلب شبكة ولا query.
+
+**السطر 5:** use / استيراد الاسم `Illuminate\Support\Facades\Schema` علشان نقدر نكتبه مختصر في الملف. لو use جوّه class فده إدخال Trait بيوفّر methods للكلاس؛ الاستيراد نفسه مش طلب شبكة ولا query.
+
+**السطر 7:** Laravel لما يقرأ ملف الـmigration يستلم object من anonymous class وارثة من Migration. ده return من ملف PHP نفسه، مش تشغيل up ولا إنشاء جدول دلوقتي.
+
+**السطر 8:** Function / تعريف دالة `up`؛ تعريفها مش تشغيلها. أنشئ orders الأساسية. مدخلاتها: Blueprint. ناتجها: void.
+
+### السطور 9–16
+
+```php
+    {
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('branch_id')->constrained()->cascadeOnDelete();
+            $table->enum('order_type', ['delivery', 'pickup', 'dine_in']);
+            $table->decimal('total_price', 10, 2)->default(0);
+            $table->enum('status', ['pending', 'confirmed', 'preparing', 'ready', 'completed', 'cancelled'])->default('pending');
+```
+
+**السطر 9:** القوس { يفتح جسم الـclass/function/شرط المكتوب قبله. اللي بعده تابع للجسم ده لحد القوس المقابل }؛ القوس نفسه مش method.
+
+**السطر 10:** Schema::create: وقت تشغيل migration تنشئ جدول `orders`. الـfunction اللي بعدها تستقبل Blueprint باسم $table وتوصف الأعمدة؛ مش بتضيف صفوف بيانات عملاء.
+
+**السطر 11:** توصف عمود id كمفتاح أساسي Primary key من نوع unsigned BIGINT مع زيادة تلقائية في قواعد البيانات المعتادة؛ كل صف له هوية مختلفة.
+
+**السطر 12:** تعريف عمود `user_id` بنوع `foreignId`: عدد unsigned BIGINT يُستعمل عادة لربط سجل بجدول آخر؛ القيد الفعلي يحتاج constrained أو foreign. nullable تسمح بتخزين null بدل إلزامه بقيمة. constrained تضيف Foreign key للجدول المحدد أو المستنتج من اسم العمود. nullOnDelete تجعل المفتاح null عند حذف السجل المرتبط؛ لازم العمود يسمح بـnull.
+
+**السطر 13:** تعريف عمود `branch_id` بنوع `foreignId`: عدد unsigned BIGINT يُستعمل عادة لربط سجل بجدول آخر؛ القيد الفعلي يحتاج constrained أو foreign. constrained تضيف Foreign key للجدول المحدد أو المستنتج من اسم العمود. cascadeOnDelete تمسح السجلات التابعة عند حذف السجل الأب؛ دي سياسة حذف لازم تفهمها قبل التطبيق.
+
+**السطر 14:** Function / method call: نفّذ الاستدعاء المكتوب هنا. اسم الـobject قبل النقطة أو -> أو :: يحدد صاحب العملية؛ الأقواس فيها البيانات المبعوتة. الدوال الموجودة في السطر: `$table->enum(...)`: عرّف عمودًا مقيدًا بقائمة قيم داخل schema مثل order_type؛ تطبيق SQL المحدد يختلف حسب driver. مدخلاتها: اسم العمود string ثم array القيم المسموحة. العائد/الأثر: ColumnDefinition.. مدخلاتها وناتجها موضحان في بطاقات الدوال لهذا الملف.
+
+**السطر 15:** تعريف عمود `total_price` بنوع `decimal`: رقم عشري بدقة ثابتة مناسب لتخزين مبالغ لما عدد الخانات محدد. الخيارات الإضافية بعد الاسم: `10, 2`. default تضبط القيمة الافتراضية على `0` لما INSERT ما يبعتش العمود.
+
+**السطر 16:** Function / method call: نفّذ الاستدعاء المكتوب هنا. اسم الـobject قبل النقطة أو -> أو :: يحدد صاحب العملية؛ الأقواس فيها البيانات المبعوتة. الدوال الموجودة في السطر: `$table->enum(...)`: عرّف عمودًا مقيدًا بقائمة قيم داخل schema مثل order_type؛ تطبيق SQL المحدد يختلف حسب driver. مدخلاتها: اسم العمود string ثم array القيم المسموحة. العائد/الأثر: ColumnDefinition.؛ `->default(...)`: تحدد قيمة افتراضية للعمود. مدخلاتها: value. العائد/الأثر: نفس تعريف العمود.. مدخلاتها وناتجها موضحان في بطاقات الدوال لهذا الملف.
+
+### السطور 17–24
+
+```php
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('orders');
+    }
+```
+
+**السطر 17:** توصف العمودين created_at وupdated_at. Eloquent تقدر تحدّث قيمهم تلقائيًا عند إنشاء/تحديث model؛ تعريفهم مش إدخال صف الآن.
+
+**السطر 18:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 19:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+**السطر 21:** Function / تعريف دالة `down`؛ تعريفها مش تشغيلها. drop orders. مدخلاتها: لا شيء. ناتجها: void.
+
+**السطر 22:** القوس { يفتح جسم الـclass/function/شرط المكتوب قبله. اللي بعده تابع للجسم ده لحد القوس المقابل }؛ القوس نفسه مش method.
+
+**السطر 23:** Schema::dropIfExists: تحذف جدول `orders` لو موجود. ده بيحذف بياناته كمان؛ السطر غالبًا في down للرجوع عن migration، فمتجربوش على قاعدة حقيقية.
+
+**السطر 24:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+### السطور 25–25
+
+```php
+};
+```
+
+**السطر 25:** إغلاق نطاق/استدعاء/قائمة بدأ قبل السطر ده. طابق الأقواس مع بداية الجزء؛ الإغلاق وحده مش عملية جديدة.
+
+## جرّب تفهمه بنفسك
+
+اختار function واحدة: حدد مين يناديها، الـarguments، كل return، وأول عنصر واجهة يقرأ نتيجتها. لو فيه حفظ/دفع/حذف، جرّب فقط في مشروع تدريب وبيئة آمنة؛ مجرد قراءة المصدر لا تحتاج تشغيله.
+
+**English words:** Source = المصدر، Function = دالة، Parameter = اسم مدخل في التعريف، Argument = قيمة مبعوتة، Return = ناتج راجع، State = حالة، Side effect = أثر جانبي، Caller = الكود اللي نادى الدالة.

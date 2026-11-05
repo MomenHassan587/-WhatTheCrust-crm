@@ -1,0 +1,1426 @@
+{
+    "branches": [
+        {
+            "id": 1,
+            "name": "The Drive",
+            "location": "The Drive by Waterway, New Cairo",
+            "phone": "+2 0101 599 6039",
+            "opening_hours": "4 PM - 2 AM",
+            "delivery_fee": "25.00",
+            "delivery_enabled": true,
+            "is_active": true,
+            "display_order": 1,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Golf Central",
+            "location": "Golf Central, Palm Hills, 6th of October",
+            "phone": null,
+            "opening_hours": null,
+            "delivery_fee": "25.00",
+            "delivery_enabled": true,
+            "is_active": true,
+            "display_order": 2,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "LakeHouse",
+            "location": "LakeHouse The Club, Dusit Thani, New Cairo",
+            "phone": "+2 0103 314 4388",
+            "opening_hours": "12 PM - 12 AM",
+            "delivery_fee": "25.00",
+            "delivery_enabled": true,
+            "is_active": true,
+            "display_order": 3,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Pizzas",
+            "slug": "pizzas",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Sandwiches",
+            "slug": "sandwiches",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Drinks",
+            "slug": "drinks",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 4,
+            "name": "Dips",
+            "slug": "dips",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 5,
+            "name": "Desserts",
+            "slug": "desserts",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-09-28T13:28:34.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 6,
+            "name": "Starters",
+            "slug": "starters",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-10-09T17:31:21.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        },
+        {
+            "id": 7,
+            "name": "Salads",
+            "slug": "salads",
+            "display_order": 0,
+            "is_active": true,
+            "created_at": "2026-10-09T17:31:21.000000Z",
+            "updated_at": "2026-10-09T18:18:18.000000Z"
+        }
+    ],
+    "items": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Margherita Verace",
+            "description": "Italian tomatoes, fresh mozzarella, fresh basil, parmesan, and extra virgin olive oil.",
+            "image_path": null,
+            "tag": "The Queen",
+            "display_order": 1,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "425.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "425.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "425.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Diavola",
+            "description": "Italian tomatoes, fresh mozzarella, salami, dried chili, basil, parmesan, and olive oil.",
+            "image_path": "/images/menu/diavola.webp",
+            "tag": "The Devil's Pie",
+            "display_order": 2,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "470.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "470.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "470.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Quattro Formaggi",
+            "description": "Fresh mozzarella, smoked mozzarella, gorgonzola, parmesan, basil, and olive oil.",
+            "image_path": "/images/menu/quattro-formaggi.webp",
+            "tag": "Cheese Lover",
+            "display_order": 3,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "500.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "500.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "500.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Al Pesto",
+            "description": "Homemade pesto, fresh mozzarella, sundried tomatoes, basil, and parmesan.",
+            "image_path": "/images/menu/al-pesto.webp",
+            "tag": "The Green One",
+            "display_order": 4,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "580.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "580.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "580.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Carnivora",
+            "description": "Italian tomatoes, mozzarella, salami, Italian sausage, bresaola, parmesan, and basil.",
+            "image_path": "/images/menu/carnivora.webp",
+            "tag": "Meat Lover",
+            "display_order": 5,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "555.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "555.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "555.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "La Sbagliata",
+            "description": "Homemade pesto, fresh mozzarella, Italian tomatoes, parmesan, and basil.",
+            "image_path": "/images/menu/la-sbagliata.webp",
+            "tag": "Upside Down",
+            "display_order": 6,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "560.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "560.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "560.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Capricciosa",
+            "description": "Italian tomatoes, mozzarella, mushrooms, salami, artichokes, basil, and parmesan.",
+            "image_path": "/images/menu/capricciosa.webp",
+            "tag": "The Wild One",
+            "display_order": 7,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "525.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "525.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "525.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "La Tartufata",
+            "description": "Truffle cream, fresh mozzarella, mushrooms, parmesan, basil, and olive oil.",
+            "image_path": null,
+            "tag": "Truffle Lover",
+            "display_order": 8,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "595.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "595.00",
+                    "is_available": false
+                },
+                {
+                    "branch_id": 3,
+                    "price": "595.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Marinara Estiva",
+            "description": "Cherry tomatoes, parmesan, fresh basil, and extra virgin olive oil.",
+            "image_path": null,
+            "tag": "Summery Sailor",
+            "display_order": 9,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "300.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "300.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "300.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Margherita Estiva",
+            "description": "Cherry tomatoes, fresh mozzarella, parmesan, basil, and extra virgin olive oil.",
+            "image_path": null,
+            "tag": "Summery Queen",
+            "display_order": 10,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "450.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Marinara",
+            "description": "Italian tomatoes, oregano, garlic, and extra virgin olive oil.",
+            "image_path": null,
+            "tag": "Sailor's Pie",
+            "display_order": 11,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "275.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "275.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "275.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Scarpariello",
+            "description": "Italian tomatoes, sundried tomatoes, garlic, oregano, parmesan, basil, olive oil, and black pepper.",
+            "image_path": null,
+            "tag": "Shoemaker's Pie",
+            "display_order": 12,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "330.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "330.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "330.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Cosacca",
+            "description": "Italian tomatoes, garlic, oregano, parmesan, basil, olive oil, and black pepper.",
+            "image_path": null,
+            "tag": "King's Pie",
+            "display_order": 13,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "315.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "315.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "315.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Ai Funghi",
+            "description": "Italian tomatoes, fresh mozzarella, mushrooms, basil, parmesan, and olive oil.",
+            "image_path": null,
+            "tag": "Mushroom Pie",
+            "display_order": 14,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "480.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "480.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "480.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Romana",
+            "description": "Italian tomatoes, fresh mozzarella, anchovies, Kalamata olives, basil, parmesan, and olive oil.",
+            "image_path": null,
+            "tag": "Roman Pie",
+            "display_order": 15,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "450.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Ripieno",
+            "description": "Fresh mozzarella, salami, mushrooms, Italian tomatoes, basil, parmesan, and olive oil.",
+            "image_path": null,
+            "tag": "Calzone",
+            "display_order": 16,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "490.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "490.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "490.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Tonno E Cipolla",
+            "description": "Italian tomatoes, mozzarella, tuna, red onion, Kalamata olives, parmesan, and basil.",
+            "image_path": null,
+            "tag": "Tuna Pie",
+            "display_order": 17,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "575.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "575.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "575.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Canadian All-Dressed",
+            "description": "Italian tomatoes, mozzarella, mushrooms, salami, red onions, peppers, parmesan, and basil.",
+            "image_path": null,
+            "tag": "Loaded",
+            "display_order": 18,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "510.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "510.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "510.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "category_id": 1,
+            "category": "Pizzas",
+            "category_slug": "pizzas",
+            "name": "Ortolana",
+            "description": "Italian tomatoes, mozzarella, zucchini, aubergine, peppers, parmesan, and basil.",
+            "image_path": null,
+            "tag": "Vegetarian",
+            "display_order": 19,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "450.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "450.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panuozzo Al Tonno",
+            "description": "Italian tomatoes, mozzarella, tuna, red onion, olives, parmesan, basil, and lemon sauce.",
+            "image_path": null,
+            "tag": "Cold Sandwich",
+            "display_order": 20,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "320.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "320.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "320.00",
+                    "is_available": false
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panuozzo Al Roast Beef",
+            "description": "Roast beef, fresh tomatoes, mozzarella, basil, and creamy pesto.",
+            "image_path": null,
+            "tag": "Cold Sandwich",
+            "display_order": 21,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "310.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "310.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "310.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panuozzo Alla Caprese",
+            "description": "Italian tomatoes, fresh mozzarella, basil, parmesan, and olive oil.",
+            "image_path": null,
+            "tag": "Cold Sandwich",
+            "display_order": 22,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "240.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "240.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "240.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panuozzo Al Duck Bacon",
+            "description": "Duck bacon, mozzarella, mixed leaves, red onion, pesto Caesar sauce, and lemon zest.",
+            "image_path": null,
+            "tag": "Cold Sandwich",
+            "display_order": 23,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "285.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "285.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "285.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Rotolo Al Salami",
+            "description": "Tomato sauce, mozzarella, mushrooms, salami, pickled onions, basil, parmesan, and arugula.",
+            "image_path": null,
+            "tag": "Hot Sandwich",
+            "display_order": 24,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "255.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "255.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "255.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Rotolo Al Pesto",
+            "description": "Pesto, mozzarella, sundried tomatoes, basil, parmesan, arugula, balsamic, and almonds.",
+            "image_path": null,
+            "tag": "Hot Sandwich",
+            "display_order": 25,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "275.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "275.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "275.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panino Al Roast Beef",
+            "description": "Roast beef, salami spread, mozzarella, artichokes, sundried tomatoes, arugula, and pesto.",
+            "image_path": null,
+            "tag": "Hot Sandwich",
+            "display_order": 26,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "345.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "345.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "345.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "category_id": 2,
+            "category": "Sandwiches",
+            "category_slug": "sandwiches",
+            "name": "Panino Al Tartufo",
+            "description": "Truffle cream, mozzarella, mushrooms, peppers, zucchini, aubergine, and parmesan.",
+            "image_path": null,
+            "tag": "Hot Sandwich",
+            "display_order": 27,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "250.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "250.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "250.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "category_id": 3,
+            "category": "Drinks",
+            "category_slug": "drinks",
+            "name": "Water",
+            "description": "Mineral water.",
+            "image_path": null,
+            "tag": "Cold",
+            "display_order": 34,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "20.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "20.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "20.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "category_id": 3,
+            "category": "Drinks",
+            "category_slug": "drinks",
+            "name": "Sodas",
+            "description": "Assorted carbonated soft drinks.",
+            "image_path": null,
+            "tag": "Cold",
+            "display_order": 35,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "30.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "30.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "30.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "category_id": 3,
+            "category": "Drinks",
+            "category_slug": "drinks",
+            "name": "Lemonade",
+            "description": "A refreshing drink made with fresh lemons.",
+            "image_path": null,
+            "tag": "Fresh",
+            "display_order": 36,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "115.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "115.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "115.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "category_id": 3,
+            "category": "Drinks",
+            "category_slug": "drinks",
+            "name": "Iced Tea",
+            "description": "Chilled brewed tea.",
+            "image_path": "/images/menu/iced-tea.webp",
+            "tag": "Cold",
+            "display_order": 37,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "110.00",
+                    "is_available": false
+                },
+                {
+                    "branch_id": 2,
+                    "price": "110.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "110.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "category_id": 3,
+            "category": "Drinks",
+            "category_slug": "drinks",
+            "name": "Red Bull",
+            "description": "Energy drink with caffeine, taurine, and B-group vitamins.",
+            "image_path": null,
+            "tag": "Energy",
+            "display_order": 38,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "75.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "75.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "75.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "category_id": 4,
+            "category": "Dips",
+            "category_slug": "dips",
+            "name": "Marinara Dip",
+            "description": "Marinara sauce for dipping.",
+            "image_path": "/images/menu/marinara-dip.webp",
+            "tag": "Crust Dip",
+            "display_order": 28,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "60.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "60.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "60.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "category_id": 4,
+            "category": "Dips",
+            "category_slug": "dips",
+            "name": "Creamy Pesto Crust Dippers",
+            "description": "Crust pieces served with a creamy pesto dip.",
+            "image_path": "/images/menu/pesto-dip.webp",
+            "tag": "Crust Dip",
+            "display_order": 29,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "80.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "80.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "80.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "category_id": 4,
+            "category": "Dips",
+            "category_slug": "dips",
+            "name": "Creamy Truffle",
+            "description": "A creamy sauce infused with truffle.",
+            "image_path": null,
+            "tag": "Crust Dip",
+            "display_order": 30,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "110.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "110.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "110.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "category_id": 5,
+            "category": "Desserts",
+            "category_slug": "desserts",
+            "name": "Impasto Al Cacao",
+            "description": "Cocoa dough with chocolate hazelnut spread, nuts, whipped cream, and sugar.",
+            "image_path": "/images/menu/impasto-al-cacao.webp",
+            "tag": "House Special",
+            "display_order": 31,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "385.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "385.00",
+                    "is_available": false
+                },
+                {
+                    "branch_id": 3,
+                    "price": "385.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "category_id": 5,
+            "category": "Desserts",
+            "category_slug": "desserts",
+            "name": "Ripieno Al Gianduia",
+            "description": "Folded sweet dough filled with chocolate hazelnut cream and dusted with sugar.",
+            "image_path": "/images/menu/ripieno-al-gianduia.webp",
+            "tag": "Nutella Calzone",
+            "display_order": 32,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "295.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "295.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "295.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "category_id": 5,
+            "category": "Desserts",
+            "category_slug": "desserts",
+            "name": "Tiramisu",
+            "description": "House tiramisu served with a special creamy sauce.",
+            "image_path": "/images/menu/tiramisu.webp",
+            "tag": "Italian",
+            "display_order": 33,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "210.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "210.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "210.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "category_id": 6,
+            "category": "Starters",
+            "category_slug": "starters",
+            "name": "Garlic Bread",
+            "description": "Aromatic garlic butter on pizza dough.",
+            "image_path": "/images/menu/garlic-bread.webp",
+            "tag": "Shareable",
+            "display_order": 39,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "250.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "250.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "250.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "category_id": 6,
+            "category": "Starters",
+            "category_slug": "starters",
+            "name": "Mozzarella Sticks",
+            "description": "Crispy mozzarella sticks served hot.",
+            "image_path": "/images/menu/mozzarella-sticks.webp",
+            "tag": "Cheesy",
+            "display_order": 40,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "145.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "145.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "145.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "category_id": 6,
+            "category": "Starters",
+            "category_slug": "starters",
+            "name": "Montanarina",
+            "description": "Fried pizza dough with sweet marinara and parmesan.",
+            "image_path": "/images/menu/montanarina.webp",
+            "tag": "Neapolitan",
+            "display_order": 41,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "225.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "225.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "225.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "category_id": 6,
+            "category": "Starters",
+            "category_slug": "starters",
+            "name": "Truffled Crochette",
+            "description": "Potato croquettes, truffle paste, and house truffle dip.",
+            "image_path": null,
+            "tag": "Truffle",
+            "display_order": 42,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "260.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "260.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "260.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "category_id": 7,
+            "category": "Salads",
+            "category_slug": "salads",
+            "name": "Insalata Arrostita",
+            "description": "Zucchini, peppers, aubergine, mushrooms, pesto, feta, herbs, and lemon vinaigrette.",
+            "image_path": "/images/menu/insalata-arrostita.webp",
+            "tag": "Roasted",
+            "display_order": 43,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "235.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "235.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "235.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "category_id": 7,
+            "category": "Salads",
+            "category_slug": "salads",
+            "name": "Insalata Di Tonno",
+            "description": "Mixed leaves, tuna, roasted peppers, pickled onions, tomatoes, olives, and lemon dressing.",
+            "image_path": "/images/menu/insalata-di-tonno.webp",
+            "tag": "Protein",
+            "display_order": 44,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "375.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "375.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "375.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "category_id": 7,
+            "category": "Salads",
+            "category_slug": "salads",
+            "name": "Greek Salad",
+            "description": "Mixed leaves, cucumber, peppers, onions, olives, tomatoes, crumbs, oregano, and Greek dressing.",
+            "image_path": "/images/menu/greek-salad.webp",
+            "tag": "Fresh",
+            "display_order": 45,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "265.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "265.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "265.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "category_id": 7,
+            "category": "Salads",
+            "category_slug": "salads",
+            "name": "House Caesar",
+            "description": "Romaine, cherry tomatoes, pesto Caesar dressing, parmesan, and pizza dough crumbs.",
+            "image_path": "/images/menu/house-caesar.webp",
+            "tag": "House Pick",
+            "display_order": 46,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "340.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "340.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "340.00",
+                    "is_available": true
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "category_id": 7,
+            "category": "Salads",
+            "category_slug": "salads",
+            "name": "Caprese De Buffala",
+            "description": "Cherry tomatoes, buffalo mozzarella, basil, and balsamic glaze.",
+            "image_path": null,
+            "tag": "Fresh",
+            "display_order": 47,
+            "branch_options": [
+                {
+                    "branch_id": 1,
+                    "price": "295.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 2,
+                    "price": "295.00",
+                    "is_available": true
+                },
+                {
+                    "branch_id": 3,
+                    "price": "295.00",
+                    "is_available": true
+                }
+            ]
+        }
+    ]
+}

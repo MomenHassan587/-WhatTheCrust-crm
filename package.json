@@ -1,0 +1,32 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "demo:export": "php scripts/export-demo-catalog.php",
+        "demo:build": "vite build --config vite.demo.config.js && node scripts/package-demo.mjs",
+        "demo:preview": "vite preview --config vite.demo.config.js --host 127.0.0.1 --port 4173",
+        "demo:test": "node --test tests/demo/*.test.mjs"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "tailwindcss": "^4.0.0",
+        "vite": "^7.0.7"
+    },
+    "dependencies": {
+        "@stripe/react-stripe-js": "^6.12.0",
+        "@stripe/stripe-js": "^9.17.0",
+        "@vitejs/plugin-react": "^5.2.0",
+        "bootstrap": "^5.3.8",
+        "framer-motion": "^12.40.0",
+        "react": "^19.2.7",
+        "react-bootstrap": "^2.10.10",
+        "react-dom": "^19.2.7",
+        "react-router-dom": "^7.17.0"
+    }
+}
